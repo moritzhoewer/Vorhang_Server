@@ -1,0 +1,8 @@
+# Compiler Output
+*.class
+/bin
+
+# Eclipse Project Files
+.settings
+.project
+.classpath
