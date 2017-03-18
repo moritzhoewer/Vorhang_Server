@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.SocketException;
-import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,7 +18,7 @@ import java.util.logging.Logger;
  * @author Moritz Höwer
  * @version 1.0 - 11.03.2017
  */
-public class DiscoveryServer {
+public class UDPDiscoveryServer {
 
 	private static final int RECEIVE_BUFFER_SIZE = 4096;
 	private static final int PORT = 9001;
@@ -28,14 +27,9 @@ public class DiscoveryServer {
 	private boolean running;
 	private Logger logger;
 
-	public DiscoveryServer() {
+	public UDPDiscoveryServer() {
 		running = false;
 		logger = Logger.getLogger("VorhangKontrolle");
-		logger.setLevel(Level.ALL);
-		logger.setUseParentHandlers(false);
-		ConsoleHandler ch = new ConsoleHandler();
-		ch.setLevel(Level.ALL);
-		logger.addHandler(ch);
 	}
 
 	public void start() {
@@ -96,17 +90,6 @@ public class DiscoveryServer {
 				}
 			}
 		}
-	}
-
-	/**
-	 * @param args
-	 * @throws IOException
-	 */
-	public static void main(String[] args) throws IOException {
-		DiscoveryServer server = new DiscoveryServer();
-		server.start();
-		System.in.read();
-		server.stop();
 	}
 
 }
