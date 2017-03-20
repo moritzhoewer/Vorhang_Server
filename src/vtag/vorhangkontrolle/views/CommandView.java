@@ -54,6 +54,7 @@ public class CommandView {
         stage.setResizable(false);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("VorhangKontrolle Logo.png")));
         stage.centerOnScreen();
+        stage.setOnCloseRequest(ev -> handlePerfect(null));
     }
 	
 	public void show() {

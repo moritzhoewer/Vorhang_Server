@@ -79,6 +79,12 @@ public class Controller implements MessageHandler, ServerListener {
 				Platform.runLater(handleRequestDialog::close);
 			}
 			break;
+		case COMMAND:
+			if (message.equals("CANCEL")) {
+				state = State.STANDBY;
+				Platform.runLater(commandView::close);
+			}
+			break;
 		case WAITING_FOR_APP:
 			if (message.equals("ACCEPT")) {
 				Platform.runLater(sendingRequestDialog::close);

@@ -34,6 +34,7 @@ public class HandleRequestDialog extends DialogBase {
 
 		Scene scene = new Scene(root, 300, 180);
 		stage.setScene(scene);
+		stage.setOnCloseRequest(ev -> denyRequest(null));
 	}
 
 	@FXML

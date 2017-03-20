@@ -33,6 +33,7 @@ public class SendingRequestDialog extends DialogBase {
 
         Scene scene = new Scene(root, 300, 180);
         stage.setScene(scene);
+        stage.setOnCloseRequest(ev -> cancelRequest(null));
     }
 	
 	@FXML
